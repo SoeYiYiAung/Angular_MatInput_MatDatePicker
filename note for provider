@@ -1,0 +1,12 @@
+//import 
+import * as moment from 'moment';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { MY_FORMATS } from 'src/app/_metronic/core/is-json';
+
+
+//declare in @Component of component.ts
+ providers: [
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+  ]
